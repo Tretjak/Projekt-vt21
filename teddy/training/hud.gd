@@ -20,11 +20,23 @@ func show_game_over():
 	yield(get_tree().create_timer(1), "timeout")
 	$startbutton.show()
 
+func update_score(score):
+	$scorelabel.text = str(score)
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_messagetimer_timeout():
+	$message.hide()
+
+
+func _on_startbutton_pressed():
+	$startbutton.hide()
+	emit_signal("start_game")
+	
