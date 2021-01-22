@@ -8,7 +8,7 @@ func _on_EnemyDetector_area_entered(area: Area2D):
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 
 
-func _on_EnemyDeatector_body_entered(body: PhysicsBody2D) -> void:
+func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	queue_free()
 
 
