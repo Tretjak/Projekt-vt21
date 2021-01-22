@@ -22,6 +22,7 @@ func game_over():
 	$scoreTimer.stop()
 	$mobTimer.stop()
 	$hud.show_game_over()
+	get_tree().call_group("mobs", "queue_free")
 
 func new_game():
 	score = 0

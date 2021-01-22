@@ -44,3 +44,5 @@ __meta__ = {
 [node name="messagetimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+[connection signal="pressed" from="startbutton" to="." method="_on_startbutton_pressed"]
+[connection signal="timeout" from="messagetimer" to="." method="_on_messagetimer_timeout"]
