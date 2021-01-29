@@ -21,12 +21,15 @@ func _ready():
 func game_over():
 	$scoreTimer.stop()
 	$mobTimer.stop()
+	$hud.show_game_over()
+	get_tree().call_group("mobs", "queue_free")
 
 func new_game():
 	score = 0
 	$player.start($startposition.position)
 	$startTimer.start()
-	
+	$hud.update_score(score)
+	$hud.show_message("get ready")
 
 
 
@@ -50,6 +53,7 @@ func _on_mobTimer_timeout():
 
 func _on_scoreTimer_timeout():
 	score += 1
+	$hud.update_score(score)
 
 
 func _on_startTimer_timeout():
