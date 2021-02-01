@@ -24,6 +24,11 @@ config/name="Movement"
 run/main_scene="res://src/Node2D.tscn"
 config/icon="res://icon.png"
 
+[layer_names]
+
+2d_physics/layer_1="Enemy"
+2d_physics/layer_2="World"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
