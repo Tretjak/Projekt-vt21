@@ -19,3 +19,7 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+
+func rumkollision():
+	if koncept_derft = true
+		velocity = 0
