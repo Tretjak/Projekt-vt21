@@ -1,5 +1,6 @@
-extends Area2D
-
+extends Node
+#connect(_on_utforska_body_entered, Node2D)
+var knapp = false
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -16,6 +17,13 @@ func _ready():
 #	pass
 
 
-func _on_utforska_area_entered(area):
-	if Input.is_action_pressed("ui_e"):
-		print("you found the holy hand grenade of enoch")
+func _on_utforska_body_entered(area):
+	if area.get_class() == "KinematicBody2D":
+		knapp = true
+		print("enter")
+#	if Input.is_action_pressed("ui_e"):
+#		print("you found the holy hand grenade of enoch")
+
+
+func _on_utforska_body_exited(body):
+	knapp = false

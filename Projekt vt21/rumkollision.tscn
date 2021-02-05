@@ -25,9 +25,10 @@ extents = Vector2( 320.528, 155.811 )
 extents = Vector2( 162.136, 218.037 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 264.552, 89.0729 )
+extents = Vector2( 264.552, 122.62 )
 
 [node name="Node" type="Node"]
+script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -65,9 +66,9 @@ position = Vector2( 1304.58, 2059.98 )
 texture = ExtResource( 1 )
 
 [node name="utforska" type="Area2D" parent="."]
-script = ExtResource( 2 )
 
 [node name="tryck e" type="CollisionShape2D" parent="utforska"]
 position = Vector2( 487.767, 480.12 )
 shape = SubResource( 8 )
-[connection signal="area_entered" from="utforska" to="utforska" method="_on_utforska_area_entered"]
+[connection signal="body_entered" from="utforska" to="." method="_on_utforska_body_entered"]
+[connection signal="body_exited" from="utforska" to="." method="_on_utforska_body_exited"]
