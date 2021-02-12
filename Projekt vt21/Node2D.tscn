@@ -18,3 +18,5 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( 46.9794, 41.7708 )
 shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="KinematicBody2D"]
