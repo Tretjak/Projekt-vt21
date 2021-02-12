@@ -4,7 +4,7 @@ export (int) var speed = 200
 
 var velocity = Vector2()
 
-func get_input():
+func _physics_process(delta):
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
@@ -15,7 +15,12 @@ func get_input():
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
-	
-func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
+	move_and_slide(velocity)
+	if Input.is_action_just_pressed("ui_accept"):
+		shoot()
+			
+func shoot():
+	var shot = load("res://Shoot.tscn").instance()
+	shot.position = get_global_position()
+	get_parent().add_child(shot)
+#Elektrisk skot med aoe, snabbare powerup
