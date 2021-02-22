@@ -1,21 +1,18 @@
 extends KinematicBody2D
 
-export (int) var speed = 200
 
-var velocity = Vector2()
+onready var nav_2d : Navigation2D = $Navigation2D
+onready var line_2d : Line2D = $CollisionShape2D
+onready var monster = get_node("res://Enemy2")
 
-func get_input():
-	velocity = Vector2()
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
-	velocity = velocity.normalized() * speed
-	
-func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
+onready var goal = get_node("KinematicBody2D")
+# var b = "text"
+
+
+# Called when the node enters the scene tree for the first time.
+func _process(delta):
+	_set_traget(goal)
+
+
+func _set_target(target):
+	var new_path : = nav_2d.get_simple_path( )
