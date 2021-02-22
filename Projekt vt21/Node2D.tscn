@@ -10,8 +10,10 @@ extents = Vector2( 31.798, 32.0668 )
 z_index = 10
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( 431, 254 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 texture = ExtResource( 1 )
