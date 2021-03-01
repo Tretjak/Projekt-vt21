@@ -22,7 +22,7 @@ func _physics_process(delta):
 			
 func shoot():
 	if weapon == "Handgun" and timer == 0:
-		var shot = load("res://Shoot.tscn").instance()
+		var shot = load("res://HandGun.tscn").instance()
 		shot.position = get_global_position()
 		get_parent().get_parent().add_child(shot)
 		timer = 1
