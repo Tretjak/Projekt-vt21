@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=2]
 
 [sub_resource type="NavigationPolygon" id=1]
@@ -20,12 +20,12 @@ extents = Vector2( 32.5355, 31.7237 )
 [node name="Collision" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
-position = Vector2( 284.198, 105.404 )
-rotation = -0.550772
+position = Vector2( 61.8463, 59.3708 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -5.24011, -5.95586 )
 navpoly = SubResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -45,11 +45,11 @@ position = Vector2( 504.918, 0 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 504.918, 605.306 )
+position = Vector2( 508.096, 607.425 )
 shape = SubResource( 3 )
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 944.088, 360.395 )
+position = Vector2( 949.128, 187.786 )
 __meta__ = {
 "_edit_group_": true
 }
