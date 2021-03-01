@@ -24,12 +24,12 @@ func shoot():
 	if weapon == "Handgun" and timer == 0:
 		var shot = load("res://Shoot.tscn").instance()
 		shot.position = get_global_position()
-		get_parent().add_child(shot)
+		get_parent().get_parent().add_child(shot)
 		timer = 1
 	
 		$Timer.start(1)
 	if weapon == "assult":
 		var shot = load("res://Assult.tscn").instance()
 		shot.position = get_global_position()
-		get_parent().add_child(shot)
+		get_parent().get_parent().add_child(shot)
 #Elektrisk skot med aoe, snabbare powerup
