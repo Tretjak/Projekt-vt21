@@ -21,11 +21,14 @@ func _physics_process(delta):
 		shoot()
 			
 func shoot():
-	if weapon == "Handgun" and timer == 0:
-		var shot = load("res://HandGun.tscn").instance()
-		shot.position = get_global_position()
-		get_parent().get_parent().add_child(shot)
-		timer = 1
+	print("har pistol")
+	print(get_node("../../Node2D2").pistol)
+	if get_node("../../Node2D2").pistol == 1:
+		if weapon == "Handgun" and timer == 0:
+			var shot = load("res://HandGun.tscn").instance()
+			shot.position = get_global_position()
+			get_parent().get_parent().add_child(shot)
+			timer = 1
 	
 		$Timer.start(1)
 	if weapon == "assult":
