@@ -3,18 +3,18 @@
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.5355, 31.7237 )
 
 [node name="Collision" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
-position = Vector2( 110.983, 485.224 )
+position = Vector2( 149.038, 406.736 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 942.828, 81.9527 )
+position = Vector2( 891.124, 141.413 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -23,4 +23,4 @@ __meta__ = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
