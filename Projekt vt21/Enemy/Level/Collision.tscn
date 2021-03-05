@@ -1,18 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=2]
-
-[sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 1011.24, 35.7558, 1011.24, 563.662, 25.9866, 559.883, 28.5064, 31.976 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-outlines = [ PoolVector2Array( 28.5064, 31.976, 25.9866, 559.883, 1011.24, 563.662, 1011.24, 35.7558 ) ]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 9.01917, 316.375 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 532.765, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 32.5355, 31.7237 )
@@ -22,31 +11,7 @@ extents = Vector2( 32.5355, 31.7237 )
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 110.983, 485.224 )
 
-[node name="Navigation2D" type="Navigation2D" parent="."]
-
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-position = Vector2( -5.24011, -5.95586 )
-navpoly = SubResource( 1 )
-
 [node name="Node2D" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, 307.353 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 1032.23, 307.353 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 504.918, 0 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 508.096, 607.425 )
-shape = SubResource( 3 )
 
 [node name="player" type="KinematicBody2D" parent="."]
 position = Vector2( 942.828, 81.9527 )

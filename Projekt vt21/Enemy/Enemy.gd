@@ -8,16 +8,15 @@ var goal = Vector2()
 var motion = Vector2()
 var path = []
 var state = 0
-var hunt = 0
+var hunt = 1
 #0 = stop, 1 = right, 2 = left, 3 = up, 4 = down
 
 func _physics_process(delta):
 	if hunt == 1:
-		_set_target(goal)
+		#_set_target(goal)
 		if Input.is_action_pressed('ui_right'):
-			goal = get_node("../../player").global_position
+			goal = get_node("../../player").global_position - global_position
 		move_and_slide(goal * MOVE_SPEED * delta)
-		
 	
 """if state ==0:
 		motion.x = 0
@@ -52,10 +51,16 @@ func _set_target(goal):
 
 
 func _on_Area2D_body_entered(body):
-	hunt = 1
+	if body.name == "player":
+		print("Entered:")
+		print(body)
+		hunt = 1
 	pass # Replace with function body.
 
 
 func _on_Area2D_body_exited(body):
-	hunt = 0
+	if body.name == "player":
+		print("Exit:")
+		print(body)
+		hunt = 0
 	pass # Replace with function body.
