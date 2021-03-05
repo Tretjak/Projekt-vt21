@@ -4,9 +4,9 @@
 [ext_resource path="res://Assets/icon.png" type="Texture" id=2]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 1008.62, 442.779, 827.455, 441.72, 845.466, 176.854, 1006.32, 24.641, 22.8457, 27.0194, 188.599, 178.973, 24.0349, 583.569, 190.718, 459.731, 1003.94, 578.812, 1007.56, 455.493, 1005.44, 540.25, 1007.56, 454.434 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 3, 2, 5 ), PoolIntArray( 6, 4, 5, 7 ), PoolIntArray( 8, 6, 7, 9, 10 ), PoolIntArray( 10, 9, 11 ) ]
-outlines = [ PoolVector2Array( 22.8457, 27.0194, 24.0349, 583.569, 1003.94, 578.812, 1005.44, 540.25, 1007.56, 454.434, 1007.56, 455.493, 190.718, 459.731, 188.599, 178.973, 845.466, 176.854, 827.455, 441.72, 1008.62, 442.779, 1006.32, 24.641 ) ]
+vertices = PoolVector2Array( 1011.24, 35.7558, 1011.24, 563.662, 25.9866, 559.883, 28.5064, 31.976 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 28.5064, 31.976, 25.9866, 559.883, 1011.24, 563.662, 1011.24, 35.7558 ) ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9.01917, 316.375 )
@@ -20,7 +20,7 @@ extents = Vector2( 32.5355, 31.7237 )
 [node name="Collision" type="Node2D"]
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
-position = Vector2( 61.8463, 59.3708 )
+position = Vector2( 110.983, 485.224 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
@@ -49,7 +49,7 @@ position = Vector2( 508.096, 607.425 )
 shape = SubResource( 3 )
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 949.128, 187.786 )
+position = Vector2( 942.828, 81.9527 )
 __meta__ = {
 "_edit_group_": true
 }

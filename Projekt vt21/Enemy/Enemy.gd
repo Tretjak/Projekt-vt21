@@ -19,7 +19,7 @@ func _physics_process(delta):
 		move_and_slide(goal * MOVE_SPEED * delta)
 		
 	
-	"""if state ==0:
+"""if state ==0:
 		motion.x = 0
 		motion.y = 0
 	elif state == 1:
@@ -37,10 +37,11 @@ func _physics_process(delta):
 		"""
 
 
-func _on_Timer_timeout():
+"""func _on_Timer_timeout():
 	state = floor(rand_range(0,5))
 	print(state)
 	pass # Replace with function body.
+	"""
 	
 	
 func _set_target(goal):
