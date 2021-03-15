@@ -26,7 +26,6 @@ func _physics_process(delta):
 func flashlight():
 	if ficklampa == "på":
 		var lampa = load("res://ljus.tscn").instance()
-		lampa.set_global_position(self.get_global_position())
 		add_child(lampa)
 		print("Node:")
 		print(lampa)

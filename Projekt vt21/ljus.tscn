@@ -8,6 +8,3 @@
 z_index = 1
 texture = ExtResource( 1 )
 shadow_enabled = true
-
-[node name="Sprite" type="Sprite" parent="Light2D"]
-texture = ExtResource( 1 )

@@ -65,7 +65,6 @@ position = Vector2( 144.92, 1355.7 )
 shape = SubResource( 7 )
 
 [node name="koncept_derft" type="Sprite" parent="StaticBody2D"]
-light_mask = 0
 position = Vector2( 1304.58, 2059.98 )
 texture = ExtResource( 1 )
 
