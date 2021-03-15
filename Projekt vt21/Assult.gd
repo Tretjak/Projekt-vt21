@@ -8,6 +8,7 @@ var velocity =Vector2()
 func _ready():
 	target = get_global_mouse_position()
 	velocity = -(position - target).normalized()
+
 	pass
 	
 func _process(delta):
