@@ -30,5 +30,4 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
-zoom = Vector2( 4, 4 )
 [connection signal="timeout" from="KinematicBody2D/Timer" to="KinematicBody2D" method="_on_Timer_timeout"]

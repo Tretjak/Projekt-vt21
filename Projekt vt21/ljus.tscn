@@ -5,6 +5,8 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 52.3259, 299.172 )
+rotation = 1.5708
 z_index = 1
 texture = ExtResource( 1 )
 shadow_enabled = true
