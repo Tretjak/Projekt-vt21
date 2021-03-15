@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
-var weapon = "Handgun"
+var weapon = ""
+var ficklampa = ""
 var velocity = Vector2()
 var timer = 0
 
@@ -19,20 +20,34 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	if Input.is_action_just_pressed("ui_accept"):
 		shoot()
-			
+	if Input.is_action_just_released("ui_f"):
+		flashlight()
+		
+func flashlight():
+	if ficklampa == "på":
+		var lampa = load("res://ljus.tscn").instance()
+		lampa.set_global_position(self.get_global_position())
+		add_child(lampa)
+		print("Node:")
+		print(lampa)
+		print("position player")
+		print(position)
+		print("position ficklampa")
+		print(lampa.position)
+
 func shoot():
-	print("har pistol")
-	print(get_node("../../Node2D2").pistol)
-	if get_node("../../Node2D2").pistol == 1:
-		if weapon == "Handgun" and timer == 0:
-			var shot = load("res://HandGun.tscn").instance()
-			shot.position = get_global_position()
-			get_parent().get_parent().add_child(shot)
-			timer = 1
-	
+	if weapon == "Handgun" and timer == 0:
+		var shot = load("res://HandGun.tscn").instance()
+		shot.position = get_global_position()
+		get_parent().get_parent().add_child(shot)
+		timer = 1
 		$Timer.start(1)
 	if weapon == "assult":
 		var shot = load("res://Assult.tscn").instance()
 		shot.position = get_global_position()
 		get_parent().get_parent().add_child(shot)
 #Elektrisk skot med aoe, snabbare powerup
+
+
+func _on_Timer_timeout():
+	timer = 0

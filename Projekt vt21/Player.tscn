@@ -8,6 +8,9 @@ extents = Vector2( 42.9776, 36.4242 )
 
 [node name="Node2D" type="Node2D"]
 z_index = 10
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 2 )
@@ -27,3 +30,5 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
+zoom = Vector2( 4, 4 )
+[connection signal="timeout" from="KinematicBody2D/Timer" to="KinematicBody2D" method="_on_Timer_timeout"]
