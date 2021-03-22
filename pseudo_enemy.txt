@@ -1,0 +1,68 @@
+#Pseudokod Enemy
+
+variabel hunt = "Idle"
+variabel start_area = 0		#En variabel som kollar om jag är i min "start area"
+variabel target_list = []
+variabel target = Vector2()
+
+func _process(_delta):
+
+	ray-casting()
+	
+	
+	if jag inte jagar:
+		if not in startarea:	#följande kollar "inte är likamed" != 
+			leta dig tillbaka till din startarea
+		else:
+			Gör grejer som du ska göra när du är idle
+	
+	elif jag jagar spelaren:
+		rör dig mot spelaren.
+	
+	elif jag jagar lukt:
+		target = hitta_närmsta_lukt()
+		Rör dig mot target.
+	else:
+		Sluta jaga		#hunt = "Idle"
+		
+
+func Area2D_kropp_går_in_i_arean(kropp):
+	if kropp.id != self.id:		#Kolla så att kroppen inte är jag själv
+		target_list.append(kropp)	#lägg till kroppen i listan
+			
+func Area2D_kropp_går_ur_arean(kropp):
+	if kropp.id != self.id:		#Kolla så att kroppen inte är jag själv
+		target_list.remove(kropp)	#ta bort i listan
+			
+	
+	
+	
+	
+	
+	
+	
+
+
+
+#https://docs.godotengine.org/en/stable/tutorials/physics/ray-casting.html
+func ray-casting():
+	#Skapa ett space_state för raycast
+	var space_state = get_world_2d().direct_space_state
+	if target_list.has("Spelarnamn"):
+		target_position = target_list[target_list.find("Spelarnamn",0)]
+		var result = space_state.intersect_ray(global_position, target_position , [self])
+		if result:
+			hunt = "Player"
+			target = player_position
+	elif target_list.has("Lukt"):
+		target_position = target_list[target_list.find("Lukt",0)]
+		var result = space_state.intersect_ray(global_position, target_position , [self])
+		if result:
+			hunt = "Lukt"
+			target = hitta_närmsta_lukt_position()
+	else:
+		hunt = "Idle"
+
+func Area2D_kolliderar_med_kropp(kropp):
+	if kropp.name == "Lukt":
+		kropp.queue.free()
