@@ -4,13 +4,18 @@
 [ext_resource path="res://Assets/Grafik/Shot_PlaceHolder.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.07283, 5.94379 )
+extents = Vector2( 6.12706, 3.12736 )
 
 [node name="Handgun" type="Area2D"]
+position = Vector2( 23, 31 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = -1.5708
 texture = ExtResource( 2 )

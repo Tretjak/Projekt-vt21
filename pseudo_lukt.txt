@@ -1,0 +1,9 @@
+#Pseudokod Lukt-nod
+
+variabel tid_att_leva
+
+När noden skapas:
+	$Timer.start(tid_att_leva)	#Starta timer på för självförsörelse
+
+När timern tar slut:
+	Förstör dig själv.

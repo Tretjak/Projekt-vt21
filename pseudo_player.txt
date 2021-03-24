@@ -1,0 +1,8 @@
+#Pseudokod Player_node
+
+När noden skapas:
+	Starta timer på 3 sekunder
+
+När timern tar slut:
+	skapa en instans av lukt på din position
+	starta om timer om du valt "one-shot" på timern.

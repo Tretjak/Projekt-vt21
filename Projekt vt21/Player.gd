@@ -19,17 +19,32 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	if Input.is_action_just_pressed("ui_accept"):
 		shoot()
-			
+	
+	var look_vec = get_global_mouse_position() - global_position
+	global_rotation = atan2(look_vec.y, look_vec.x)
+
 func shoot():
 	if weapon == "Handgun" and timer == 0:
-		var shot = load("res://HandGun.tscn").instance()
-		shot.position = get_global_position()
-		get_parent().get_parent().add_child(shot)
+		var shot = load("res://Shoot.tscn").instance()
+		shot.position = position
+		get_parent().add_child(shot)
 		timer = 1
-	
 		$Timer.start(1)
 	if weapon == "assult":
 		var shot = load("res://Assult.tscn").instance()
 		shot.position = get_global_position()
-		get_parent().get_parent().add_child(shot)
+		get_parent().add_child(shot)
+		timer = 1
+		$Timer.start(0,1)
+	if weapon == "Elektrisk" and timer == 0.1:
+		var shot = load("res://Shoot.tscn").instance()
+		shot.position = get_global_position()
+		get_parent().add_child(shot)
+		timer = 1
+		$Timer.start(1)
 #Elektrisk skot med aoe, snabbare powerup
+
+
+func _on_Timer_timeout():
+	timer = 0
+	pass # Replace with function body.
