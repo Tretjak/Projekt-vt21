@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Grafik/longgun.png" type="Texture" id=1]
 [ext_resource path="res://pistol.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.8733, 32.8749 )
+extents = Vector2( 10, 46 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )

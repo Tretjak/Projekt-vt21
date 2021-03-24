@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 export (int) var speed = 200
+var sprite = ""
 var weapon = ""
 var ficklampa = ""
 var velocity = Vector2()
@@ -28,6 +29,7 @@ func _physics_process(delta):
 	elif has_node("Ljus"):
 		if Input.is_action_just_pressed("ui_f"):
 			$Ljus.queue_free()
+	pistolsprite()
 	
 	var look_vec = get_global_mouse_position() - global_position
 	global_rotation = atan2(look_vec.y, look_vec.x)
@@ -37,13 +39,16 @@ func flashlight():
 		var lampa = load("res://ljus.tscn").instance()
 		add_child(lampa)
 		target = get_global_mouse_position()
-		print("Node:")
-		print(lampa)
-		print("position player")
-		print(position)
-		print("position ficklampa")
-		print(lampa.position)
+		lampa.position = $ficklampa.position
 
+func pistolsprite():
+	if sprite == "på":
+		var pew = load("res://pew.tscn").instance()
+		add_child(pew)
+		target = get_global_mouse_position()
+		pew.position = $pistol.position
+		
+	
 func shoot():
 	if weapon == "Handgun" and timer == 0:
 		var shot = load("res://HandGun.tscn").instance()
