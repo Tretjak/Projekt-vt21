@@ -10,4 +10,5 @@ script = ExtResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 3.93521e-07, 33 )
+rotation = 4.71239
 z_index = 9

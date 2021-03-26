@@ -9,6 +9,9 @@ var velocity = Vector2()
 var timer = 0
 var target
 
+func _ready():
+	pass
+
 func _physics_process(delta):
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
@@ -47,7 +50,7 @@ func pistolsprite():
 		add_child(pew)
 		target = get_global_mouse_position()
 		pew.position = $pistol.position
-		
+		sprite = ""
 	
 func shoot():
 	if weapon == "Handgun" and timer == 0:
