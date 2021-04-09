@@ -54,8 +54,9 @@ func pistolsprite():
 	
 func shoot():
 	if weapon == "Handgun" and timer == 0:
+		var spawn = get_node("pew/Position2D")
 		var shot = load("res://HandGun.tscn").instance()
-		shot.position = $pistol.global_position
+		shot.position = spawn.global_position
 		get_parent().get_parent().add_child(shot)
 		timer = 1
 		$Timer.start(1)
