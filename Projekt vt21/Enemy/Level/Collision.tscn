@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.5355, 31.7237 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.57837, 311.124 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 515.006, 10 )
+
+[node name="Collision" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 469.676, 274.885 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 891.124, 141.413 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="player"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource( 1 )
+
+[node name="Player2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 823.657, 379.595 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 6.10352e-05, 299.661 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 1023.34, 298.163 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 506.428, -2.99661 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 513.919, 599.323 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource( 3 )
