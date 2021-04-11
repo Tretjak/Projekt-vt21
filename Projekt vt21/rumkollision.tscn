@@ -24,57 +24,60 @@ extents = Vector2( 320.528, 155.811 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 162.136, 218.037 )
 
-[sub_resource type="OccluderPolygon2D" id=9]
+[sub_resource type="OccluderPolygon2D" id=8]
 cull_mode = 1
-polygon = PoolVector2Array( 8.57269, 765.072, 161.308, 762.243, 161.308, 547.283, 1742.4, 544.454, 1745.23, 770.728, 1920.59, 770.728, 1917.76, 1163.88, 1612.29, 1155.39, 1612.29, 1582.49, 1128.63, 1593.8, 1137.12, 1916.24, 729.822, 1916.24, 758.106, 1873.82, 749.621, 1588.14, 311.214, 1588.14, 305.558, 1138.42, 0.0874634, 1132.77 )
+polygon = PoolVector2Array( 8.57269, 765.072, 161.308, 762.243, 161.308, 547.283, 160.038, 199.412, 1741.86, 207.401, 1744.66, 758.721, 1915.24, 760.635, 1915.33, 519.37, 2717.37, 521.642, 2721.91, 1321.41, 1917.6, 1325.96, 1917.76, 1163.88, 1612.29, 1155.39, 1612.29, 1582.49, 1128.63, 1593.8, 1137.12, 1916.24, 729.822, 1916.24, 758.106, 1873.82, 749.621, 1588.14, 311.214, 1588.14, 305.558, 1138.42, 0.0874634, 1132.77 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 264.552, 122.62 )
 
-[node name="Node" type="Node"]
+[node name="Collisions" type="Node"]
 script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="MR-Panel" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1511.05, 1748.85 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="MR-Wall" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1759.96, 1355.7 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="MR-Panel2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 948.198, 442.12 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="MR-Wall2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1830.67, 645.77 )
 shape = SubResource( 4 )
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="MR-Wall3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 77.0399, 645.77 )
 shape = SubResource( 5 )
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="MR-Wall4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 427.767, 1748.85 )
 shape = SubResource( 6 )
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="MR-Wall5" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 144.92, 1355.7 )
 shape = SubResource( 7 )
 
-[node name="koncept_derft" type="Sprite" parent="StaticBody2D"]
+[node name="Room-overlay" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1304.58, 2059.98 )
 texture = ExtResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
-occluder = SubResource( 9 )
+occluder = SubResource( 8 )
 
 [node name="utforska" type="Area2D" parent="."]
 
 [node name="tryck e" type="CollisionShape2D" parent="utforska"]
 position = Vector2( 487.767, 480.12 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 [connection signal="body_entered" from="utforska" to="." method="_on_utforska_body_entered"]
 [connection signal="body_exited" from="utforska" to="." method="_on_utforska_body_exited"]

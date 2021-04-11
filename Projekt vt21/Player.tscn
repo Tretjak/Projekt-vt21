@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.9776, 36.4242 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Player" type="Node2D"]
 z_index = 10
 __meta__ = {
 "_edit_group_": true

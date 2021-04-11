@@ -7,7 +7,7 @@ var velocity =Vector2()
 
 func _ready():
 	target = Transform2D (global_rotation, global_position)
-	global_rotation = get_parent().get_node("Node2D/KinematicBody2D").global_rotation
+	global_rotation = get_parent().get_node("Player/KinematicBody2D").global_rotation
 	#velocity = -(position - target).normalized()
 	pass
 	
