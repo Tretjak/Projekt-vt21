@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
-var weapon = "Handgun"
+var weapon = "Elektrisk"
 var velocity = Vector2()
 var timer = 0
 
@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 func shoot():
 	if weapon == "Handgun" and timer == 0:
-		var shot = load("res://Shoot.tscn").instance()
+		var shot = load("res://HandGun.tscn").instance()
 		shot.position = position
 		get_parent().add_child(shot)
 		timer = 1
@@ -35,10 +35,10 @@ func shoot():
 		shot.position = get_global_position()
 		get_parent().add_child(shot)
 		timer = 1
-		$Timer.start(0,1)
-	if weapon == "Elektrisk" and timer == 0.1:
-		var shot = load("res://Shoot.tscn").instance()
-		shot.position = get_global_position()
+		$Timer.start(0.1)
+	if weapon == "Elektrisk" and timer == 0:
+		var shot = load("res://Elektrisk.tscn").instance()
+		shot.position = position
 		get_parent().add_child(shot)
 		timer = 1
 		$Timer.start(1)
