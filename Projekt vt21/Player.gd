@@ -1,9 +1,16 @@
 extends KinematicBody2D
 
+
 export (int) var speed = 200
-var weapon = "Elektrisk"
+var sprite = ""
+var weapon = ""
+var ficklampa = ""
 var velocity = Vector2()
 var timer = 0
+var target
+
+func _ready():
+	pass
 
 func _physics_process(delta):
 	velocity = Vector2()
@@ -19,15 +26,39 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	if Input.is_action_just_pressed("ui_accept"):
 		shoot()
+		
+	if !has_node("Ljus"):
+		if Input.is_action_just_pressed("ui_f"):
+			flashlight()
+	elif has_node("Ljus"):
+		if Input.is_action_just_pressed("ui_f"):
+			$Ljus.queue_free()
+	pistolsprite()
 	
 	var look_vec = get_global_mouse_position() - global_position
 	global_rotation = atan2(look_vec.y, look_vec.x)
 
+func flashlight():
+	if ficklampa == "på":
+		var lampa = load("res://ljus.tscn").instance()
+		add_child(lampa)
+		target = get_global_mouse_position()
+		lampa.position = $ficklampa.position
+
+func pistolsprite():
+	if sprite == "på":
+		var pew = load("res://pew.tscn").instance()
+		add_child(pew)
+		target = get_global_mouse_position()
+		pew.position = $pistol.position
+		sprite = ""
+	
 func shoot():
 	if weapon == "Handgun" and timer == 0:
+		var spawn = get_node("pew/Position2D")
 		var shot = load("res://HandGun.tscn").instance()
-		shot.position = position
-		get_parent().add_child(shot)
+		shot.position = spawn.global_position
+		get_parent().get_parent().add_child(shot)
 		timer = 1
 		$Timer.start(1)
 	if weapon == "assult":
@@ -47,4 +78,3 @@ func shoot():
 
 func _on_Timer_timeout():
 	timer = 0
-	pass # Replace with function body.
