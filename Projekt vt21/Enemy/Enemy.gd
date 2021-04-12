@@ -54,6 +54,8 @@ func _on_Area2D_body_entered(body):
 		print(body)
 		hunt = 1
 	elif body.name == "StaticBody2D" and body != self:
+		print("Entered:")
+		print(body)
 		hunt = 2
 	pass # Replace with function body.
 
@@ -63,5 +65,7 @@ func _on_Area2D_body_exited(body):
 		print(body)
 		hunt = 0
 	elif body.name == "StaticBody2D" and body != self:
+		print("Exit:")
+		print(body)
 		hunt = 0
 	pass # Replace with function body.
