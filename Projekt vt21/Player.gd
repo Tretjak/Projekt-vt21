@@ -19,7 +19,7 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	if Input.is_action_just_pressed("ui_accept"):
 		shoot()
-			
+
 func shoot():
 	if weapon == "Handgun" and timer == 0:
 		var shot = load("res://HandGun.tscn").instance()
@@ -33,3 +33,11 @@ func shoot():
 		shot.position = get_global_position()
 		get_parent().get_parent().add_child(shot)
 #Elektrisk skot med aoe, snabbare powerup
+
+func _ready() -> void:
+	$Timer.start(3)
+
+func _on_Timer_timeout():
+	var lukt = load("res://Enemy/Lukt.tscn").instance()
+	lukt.position = get_global_position()
+	get_parent().get_parent().add_child(lukt)
