@@ -78,3 +78,11 @@ func shoot():
 
 func _on_Timer_timeout():
 	timer = 0
+
+func _ready() -> void:
+	$Timer.start(3)
+
+func _on_Timer_timeout():
+	var lukt = load("res://Enemy/Lukt.tscn").instance()
+	lukt.position = get_global_position()
+	get_parent().get_parent().add_child(lukt)

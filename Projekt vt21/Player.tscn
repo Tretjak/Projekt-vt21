@@ -30,6 +30,7 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
+[connection signal="timeout" from="KinematicBody2D/Timer" to="KinematicBody2D" method="_on_Timer_timeout"]
 
 [node name="ficklampa" type="Position2D" parent="KinematicBody2D"]
 position = Vector2( 22, -31 )

@@ -16,7 +16,10 @@ var velocity = Vector2()
 func _physics_process(delta):
 	if hunt == 1:
 		#_set_target(goal)
-		goal = get_node("../../player").global_position - global_position
+		goal = get_node("../../Player/KinematicBody2D").global_position - global_position
+		move_and_slide(goal * MOVE_SPEED * delta)
+	elif hunt == 2:
+		goal = get_node("res://Enemy/Lukt/StaticBody2D").global_position - global_position
 		move_and_slide(goal * MOVE_SPEED * delta)
 	elif hunt == 0:
 		if state == 0:
@@ -33,33 +36,32 @@ func _physics_process(delta):
 		velocity = velocity.normalized() * speed
 		move_and_slide(velocity)
 
-
 func _on_Timer_timeout():
 	if hunt == 0:
 		state = floor(rand_range(0,5))
 		print(state)
 		pass # Replace with function body.
-		
-	
-	
+
 func _set_target(goal):
 	var new_path : = nav_2d.get_simple_path(self.global_position, goal)
 	print("what is my path?")
 	print(new_path)
 	path = new_path
 
-
 func _on_Area2D_body_entered(body):
-	if body.name == "player":
+	if body.name == "KinematicBody2D" and body != self:
 		print("Entered:")
 		print(body)
 		hunt = 1
+	elif body.name == "StaticBody2D" and body != self:
+		hunt = 2
 	pass # Replace with function body.
 
-
 func _on_Area2D_body_exited(body):
-	if body.name == "player":
+	if body.name == "KinematicBody2D" and body != self:
 		print("Exit:")
 		print(body)
+		hunt = 0
+	elif body.name == "StaticBody2D" and body != self:
 		hunt = 0
 	pass # Replace with function body.
