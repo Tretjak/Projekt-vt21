@@ -14,8 +14,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("ui_e") and get_node("../Node").knapp:
-		$CollisionShape2D.set_rotation_degrees(90)
+	if Input.is_action_just_pressed("ui_e") and get_node("../Collisions").knapp:
+		$"Coll-DoorWMR".set_rotation_degrees(90)
 
 
 #func _on_Area2D_body_entered(body):

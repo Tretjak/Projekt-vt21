@@ -59,24 +59,21 @@ func shoot():
 		shot.position = spawn.global_position
 		get_parent().get_parent().add_child(shot)
 		timer = 1
-		$Timer.start(1)
+		$Skott_Timer.start(1)
 	if weapon == "assult":
 		var shot = load("res://Assult.tscn").instance()
 		shot.position = get_global_position()
 		get_parent().add_child(shot)
 		timer = 1
-		$Timer.start(0.1)
+		$Skott_Timer.start(0.1)
 	if weapon == "Elektrisk" and timer == 0:
 		var shot = load("res://Elektrisk.tscn").instance()
 		shot.position = position
 		get_parent().add_child(shot)
 		timer = 1
-		$Timer.start(1)
+		$Skott_Timer.start(1)
 #Elektrisk skot med aoe, snabbare powerup
 
-
-func _on_Timer_timeout():
-	timer = 0
 
 func _ready() -> void:
 	$Timer.start(3)
@@ -85,3 +82,8 @@ func _on_LuktTimer_timeout():
 	var lukt = load("res://Enemy/Lukt.tscn").instance()
 	lukt.position = get_global_position()
 	get_parent().get_parent().add_child(lukt)
+
+
+func _on_Skott_Timer_timeout():
+	timer = 0
+	pass # Replace with function body.
