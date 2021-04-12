@@ -9,8 +9,7 @@ var velocity = Vector2()
 var timer = 0
 var target
 
-func _ready():
-	pass
+
 
 func _physics_process(delta):
 	velocity = Vector2()
@@ -82,7 +81,7 @@ func _on_Timer_timeout():
 func _ready() -> void:
 	$Timer.start(3)
 
-func _on_Timer_timeout():
+func _on_LuktTimer_timeout():
 	var lukt = load("res://Enemy/Lukt.tscn").instance()
 	lukt.position = get_global_position()
 	get_parent().get_parent().add_child(lukt)

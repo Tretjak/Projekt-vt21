@@ -19,7 +19,7 @@ func _physics_process(delta):
 		goal = get_node("../../Player/KinematicBody2D").global_position - global_position
 		move_and_slide(goal * MOVE_SPEED * delta)
 	elif hunt == 2:
-		goal = get_node("res://Enemy/Lukt/StaticBody2D").global_position - global_position
+		goal = get_node("../../StaticBody2D").global_position - global_position
 		move_and_slide(goal * MOVE_SPEED * delta)
 	elif hunt == 0:
 		if state == 0:

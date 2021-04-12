@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46.7686, 195.34 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=2]
 cull_mode = 1
 polygon = PoolVector2Array( 1.5, 767.5, 165.5, 767.5, 165.5, 551.5, 1749.5, 543.5, 1749.5, 771.5, 1913.5, 767.5, 1913.62, 524.754, 2711.68, 524.754, 2711.68, 1322.82, 1913.62, 1320.3, 1913.5, 1155.5, 1613.5, 1151.5, 1617.5, 1579.5, 1129.5, 1595.5, 1137.5, 1919.5, 761.5, 1923.5, 745.5, 1587.5, 313.5, 1587.5, 313.5, 1139.5, -2.5, 1143.5 )
 
@@ -53,7 +53,7 @@ position = Vector2( 2121.32, 605.284 )
 position = Vector2( 2121.32, 1236 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ljus (ficklampa)"]
-occluder = SubResource( 3 )
+occluder = SubResource( 2 )
 
 [node name="ljud&musik" type="Node" parent="."]
 script = ExtResource( 9 )
