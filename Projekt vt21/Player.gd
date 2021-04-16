@@ -14,7 +14,7 @@ var target
 func _physics_process(delta):
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
+		velocity.x += 1 #and get_node("../ljud&musik/Fotsteg").Play()
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
 	if Input.is_action_pressed("ui_down"):
@@ -51,7 +51,7 @@ func pistolsprite():
 		target = get_global_mouse_position()
 		pew.position = $pistol.position
 		sprite = ""
-	
+
 func shoot():
 	if weapon == "Handgun" and timer == 0:
 		var spawn = get_node("pew/Position2D")
