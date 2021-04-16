@@ -21,6 +21,7 @@ polygon = PoolVector2Array( 1.5, 767.5, 165.5, 767.5, 165.5, 551.5, 1749.5, 543.
 [node name="main" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.392157, 0.392157, 0.392157, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
