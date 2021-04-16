@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MOVE_SPEED = 100
+const MOVE_SPEED = 25
 
 onready var nav_2d: Navigation2D = get_node("../../Navigation2D")
 
@@ -11,6 +11,7 @@ var path = []
 var state = 0
 var hunt = 0
 var velocity = Vector2()
+var target_list = [0]
 #0 = stop, 1 = right, 2 = left, 3 = up, 4 = down
 
 func _physics_process(delta):
@@ -53,10 +54,12 @@ func _on_Area2D_body_entered(body):
 		print("Entered:")
 		print(body)
 		hunt = 1
+		target_list = +1
 	elif body.name == "StaticBody2D" and body != self:
 		print("Entered:")
 		print(body)
 		hunt = 2
+		target_list = +1
 	pass # Replace with function body.
 
 func _on_Area2D_body_exited(body):
@@ -64,8 +67,10 @@ func _on_Area2D_body_exited(body):
 		print("Exit:")
 		print(body)
 		hunt = 0
+		target_list = -1
 	elif body.name == "StaticBody2D" and body != self:
 		print("Exit:")
 		print(body)
 		hunt = 0
+		target_list = -1
 	pass # Replace with function body.
