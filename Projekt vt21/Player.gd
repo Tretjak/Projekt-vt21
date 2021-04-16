@@ -14,7 +14,7 @@ var target
 func _physics_process(delta):
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1 #and get_node("../ljud&musik/Fotsteg").Play()
+		velocity.x += 1
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
 	if Input.is_action_pressed("ui_down"):
@@ -25,7 +25,12 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	if Input.is_action_just_pressed("ui_accept"):
 		shoot() 
+	if velocity != Vector2(0,0) and ! $Fotsteg.is_playing():
+		$Fotsteg.play()
+	elif velocity == Vector2(0,0):
+		$Fotsteg.stop()
 		
+	
 	if !has_node("Ljus"):
 		if Input.is_action_just_pressed("ui_f"):
 			flashlight()
