@@ -24,8 +24,13 @@ func _physics_process(delta):
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
 	if Input.is_action_just_pressed("ui_accept"):
-		shoot()
+		shoot() 
+	if velocity != Vector2(0,0) and ! $Fotsteg.is_playing():
+		$Fotsteg.play()
+	elif velocity == Vector2(0,0):
+		$Fotsteg.stop()
 		
+	
 	if !has_node("Ljus"):
 		if Input.is_action_just_pressed("ui_f"):
 			flashlight()
@@ -51,7 +56,7 @@ func pistolsprite():
 		target = get_global_mouse_position()
 		pew.position = $pistol.position
 		sprite = ""
-	
+
 func shoot():
 	if weapon == "Handgun" and timer == 0:
 		var spawn = get_node("pew/Position2D")
@@ -60,6 +65,7 @@ func shoot():
 		get_parent().get_parent().add_child(shot)
 		timer = 1
 		$Skott_Timer.start(1)
+		get_parent().get_parent().get_node("ljud&musik/Pistolskott").play()
 	if weapon == "assult":
 		var shot = load("res://Assult.tscn").instance()
 		shot.position = get_global_position()
