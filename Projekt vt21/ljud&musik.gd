@@ -34,6 +34,9 @@ func _process(delta):
 		$Fotsteg.play()
 	elif Input.is_action_just_released("ui_up"):
 		$Fotsteg.stop()
+		
+	#if Input.is_action_just_pressed("ui_accept"):
+	#	$Pistolskott.play()
 #	AudioStreamPlayer.set_loop(true)
 
 

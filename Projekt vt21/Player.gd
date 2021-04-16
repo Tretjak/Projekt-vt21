@@ -24,7 +24,7 @@ func _physics_process(delta):
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
 	if Input.is_action_just_pressed("ui_accept"):
-		shoot()
+		shoot() 
 		
 	if !has_node("Ljus"):
 		if Input.is_action_just_pressed("ui_f"):
@@ -60,6 +60,7 @@ func shoot():
 		get_parent().get_parent().add_child(shot)
 		timer = 1
 		$Skott_Timer.start(1)
+		get_parent().get_parent().get_node("ljud&musik/Pistolskott").play()
 	if weapon == "assult":
 		var shot = load("res://Assult.tscn").instance()
 		shot.position = get_global_position()
