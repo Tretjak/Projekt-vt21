@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://rumkollision.tscn" type="PackedScene" id=2]
@@ -10,7 +10,9 @@
 [ext_resource path="res://ficklampa.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ljud&musik.gd" type="Script" id=9]
 [ext_resource path="res://Assets/2Space Station Ambience.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Grafik/light.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Gun_fire.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Grafik/spot.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46.7686, 195.34 )
@@ -22,7 +24,7 @@ polygon = PoolVector2Array( 1.5, 767.5, 165.5, 767.5, 165.5, 551.5, 1749.5, 543.
 [node name="main" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.392157, 0.392157, 0.392157, 1 )
+color = Color( 0.0980392, 0.0941176, 0.0941176, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 832.236, 990.186 )
@@ -55,6 +57,90 @@ position = Vector2( 2121.32, 1236 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ljus (ficklampa)"]
 occluder = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 999.05, 442.12 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D4" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 1830.67, 1147.18 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D4"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D5" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 1122.67, 1659.18 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D5"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D6" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 222.67, 1099.18 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D6"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D3" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 352.05, 442.12 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D3"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D2" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 1551.55, 442.12 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D2"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
 
 [node name="ljud&musik" type="Node" parent="."]
 script = ExtResource( 9 )
