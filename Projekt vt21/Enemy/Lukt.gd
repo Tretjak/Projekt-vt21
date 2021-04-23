@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-
+var lukt = 1
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,7 +8,7 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.start(5)
+	$Timer.start(20)
 	pass # Replace with function body.
 
 

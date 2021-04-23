@@ -8,7 +8,7 @@ var ficklampa = ""
 var velocity = Vector2()
 var timer = 0
 var target
-
+var lukt = 0
 
 
 func _physics_process(delta):

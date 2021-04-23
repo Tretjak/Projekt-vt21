@@ -3,7 +3,7 @@ extends KinematicBody2D
 const MOVE_SPEED = 25
 
 onready var nav_2d: Navigation2D = get_node("../../Navigation2D")
-
+var lukt = 0
 export (int) var speed = 50
 var goal = Vector2()
 var motion = Vector2()
@@ -20,12 +20,12 @@ func _physics_process(delta):
 		goal = get_node("../../Player/KinematicBody2D").global_position - global_position
 		move_and_slide(goal * MOVE_SPEED * delta)
 	elif hunt == 2:
-		var lukt = load("res://Enemy/Lukt.tscn").instance()
-		add_child(lukt)
-		goal = get_node("../../Enemy/Lukt/StaticBody2D").global_position - global_position
-		lukt.position = $Lukt.position
-		#goal = get_node("../../StaticBody2D").global_position - global_position
-		#move_and_slide(goal * MOVE_SPEED * delta)
+		if get_node("../../StaticBody2D"):
+			goal = get_node("../../StaticBody2D").global_position - global_position
+			#goal = get_node("../../StaticBody2D").global_position - global_position
+			move_and_slide(goal * MOVE_SPEED * delta)
+		else:
+			hunt = 0
 	elif hunt == 0:
 		if state == 0:
 			velocity.x = 0
@@ -59,10 +59,9 @@ func _on_Area2D_body_entered(body):
 		print(body)
 		hunt = 1
 		target_list = +1
-	elif body.name == "StaticBody2D" and body != self:
+	elif body.lukt == 1 and body != self:
 		print("Entered:")
 		print(body)
-		hunt = 2
 		target_list = +1
 	pass # Replace with function body.
 
@@ -70,11 +69,10 @@ func _on_Area2D_body_exited(body):
 	if body.name == "KinematicBody2D" and body != self:
 		print("Exit:")
 		print(body)
-		hunt = 0
+		hunt = 2
 		target_list = -1
-	elif body.name == "StaticBody2D" and body != self:
+	elif body.lukt == 1 and body != self:
 		print("Exit:")
 		print(body)
-		hunt = 0
 		target_list = -1
 	pass # Replace with function body.
