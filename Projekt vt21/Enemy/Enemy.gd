@@ -11,7 +11,7 @@ var path = []
 var state = 0
 var hunt = 0
 var velocity = Vector2()
-var target_list = [0]
+var target_list = []
 #0 = stop, 1 = right, 2 = left, 3 = up, 4 = down
 
 func _physics_process(delta):
@@ -22,7 +22,6 @@ func _physics_process(delta):
 	elif hunt == 2:
 		if get_node("../../StaticBody2D"):
 			goal = get_node("../../StaticBody2D").global_position - global_position
-			#goal = get_node("../../StaticBody2D").global_position - global_position
 			move_and_slide(goal * MOVE_SPEED * delta)
 		else:
 			hunt = 0
@@ -58,11 +57,11 @@ func _on_Area2D_body_entered(body):
 		print("Entered:")
 		print(body)
 		hunt = 1
-		target_list = +1
-	elif body.lukt == 1 and body != self:
+	elif body.get_collision_layer() == 2 and body != self:
 		print("Entered:")
 		print(body)
-		target_list = +1
+		target_list.append(body)
+		print(target_list)
 	pass # Replace with function body.
 
 func _on_Area2D_body_exited(body):
@@ -70,9 +69,9 @@ func _on_Area2D_body_exited(body):
 		print("Exit:")
 		print(body)
 		hunt = 2
-		target_list = -1
-	elif body.lukt == 1 and body != self:
+	elif body.get_collision_layer() == 2 and body != self:
 		print("Exit:")
 		print(body)
-		target_list = -1
+		target_list.erase(body)
+		print(target_list)
 	pass # Replace with function body.
