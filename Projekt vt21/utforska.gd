@@ -1,7 +1,7 @@
 extends Node
 #connect(_on_utforska_body_entered, Node2D)
 var knapp = false
-
+var saga = 0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -27,3 +27,11 @@ func _on_utforska_body_entered(area):
 
 func _on_utforska_body_exited(body):
 	knapp = false
+
+
+func _on_trigger_body_entered(area):
+	if area.get_class() == "KinematicBody2D" and saga == 0:
+		get_tree().change_scene("res://lore.tscn")
+		
+		saga = 1
+		

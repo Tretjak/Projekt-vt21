@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/koncept_derft.jpg" type="Texture" id=1]
 [ext_resource path="res://utforska.gd" type="Script" id=2]
@@ -30,6 +30,9 @@ polygon = PoolVector2Array( 8.57269, 765.072, 161.308, 762.243, 161.308, 547.283
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 264.552, 122.62 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 290.743, 32.5447 )
 
 [node name="Collisions" type="Node"]
 script = ExtResource( 2 )
@@ -79,5 +82,15 @@ occluder = SubResource( 8 )
 [node name="tryck e" type="CollisionShape2D" parent="utforska"]
 position = Vector2( 487.767, 480.12 )
 shape = SubResource( 9 )
+
+[node name="trigger" type="Area2D" parent="."]
+position = Vector2( 948.198, 1937.47 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
+shape = SubResource( 10 )
 [connection signal="body_entered" from="utforska" to="." method="_on_utforska_body_entered"]
 [connection signal="body_exited" from="utforska" to="." method="_on_utforska_body_exited"]
+[connection signal="body_entered" from="trigger" to="." method="_on_trigger_body_entered"]
