@@ -20,6 +20,6 @@ func _process(delta):
 func _on_StaticBody2D_body_entered(body):
 	print(body.get_name())
 	if body.get_name() == "KinematicBody2D":
-		body.weapon = "Handgun"
-		body.sprite = "på"
+		Global.weapon = "Handgun"
+		Global.sprite = "på"
 

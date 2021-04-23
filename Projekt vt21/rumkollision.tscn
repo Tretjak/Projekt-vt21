@@ -85,6 +85,8 @@ shape = SubResource( 9 )
 
 [node name="trigger" type="Area2D" parent="."]
 position = Vector2( 948.198, 1937.47 )
+collision_layer = 128
+collision_mask = 128
 __meta__ = {
 "_edit_group_": true
 }

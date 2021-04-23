@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://rumkollision.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Button.gd" type="Script" id=3]
 [ext_resource path="res://Door.gd" type="Script" id=4]
@@ -27,7 +27,6 @@ polygon = PoolVector2Array( 1.5, 767.5, 165.5, 767.5, 165.5, 551.5, 1749.5, 543.
 color = Color( 0.0980392, 0.0941176, 0.0941176, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 832.236, 990.186 )
 script = ExtResource( 3 )
 
 [node name="Collisions" parent="." instance=ExtResource( 2 )]

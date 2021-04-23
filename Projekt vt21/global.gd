@@ -1,10 +1,10 @@
-extends Node2D
+extends Node
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+var playerpos = Vector2(832,990)
+var weapon = ""
+var ficklampa =""
+var sprite = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,9 +14,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Area2D_body_entered(body):
-	print(body.get_name())
-	if body.get_name() == "KinematicBody2D":
-		Global.ficklampa = "på"

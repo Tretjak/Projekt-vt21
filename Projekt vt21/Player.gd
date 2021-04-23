@@ -2,9 +2,6 @@ extends KinematicBody2D
 
 
 export (int) var speed = 200
-var sprite = ""
-var weapon = ""
-var ficklampa = ""
 var velocity = Vector2()
 var timer = 0
 var target
@@ -43,22 +40,22 @@ func _physics_process(delta):
 	global_rotation = atan2(look_vec.y, look_vec.x)
 
 func flashlight():
-	if ficklampa == "på":
+	if Global.ficklampa == "på":
 		var lampa = load("res://ljus.tscn").instance()
 		add_child(lampa)
 		target = get_global_mouse_position()
 		lampa.position = $ficklampa.position
 
 func pistolsprite():
-	if sprite == "på":
+	if Global.sprite == "på":
 		var pew = load("res://pew.tscn").instance()
 		add_child(pew)
 		target = get_global_mouse_position()
 		pew.position = $pistol.position
-		sprite = ""
+		Global.sprite = ""
 
 func shoot():
-	if weapon == "Handgun" and timer == 0:
+	if Global.weapon == "Handgun" and timer == 0:
 		var spawn = get_node("pew/Position2D")
 		var shot = load("res://HandGun.tscn").instance()
 		shot.position = spawn.global_position
@@ -66,13 +63,13 @@ func shoot():
 		timer = 1
 		$Skott_Timer.start(1)
 		get_parent().get_parent().get_node("ljud&musik/Pistolskott").play()
-	if weapon == "assult":
+	if Global.weapon == "assult":
 		var shot = load("res://Assult.tscn").instance()
 		shot.position = get_global_position()
 		get_parent().add_child(shot)
 		timer = 1
 		$Skott_Timer.start(0.1)
-	if weapon == "Elektrisk" and timer == 0:
+	if Global.weapon == "Elektrisk" and timer == 0:
 		var shot = load("res://Elektrisk.tscn").instance()
 		shot.position = position
 		get_parent().add_child(shot)
@@ -82,6 +79,8 @@ func shoot():
 
 
 func _ready() -> void:
+	position = Global.playerpos
+	
 	$Timer.start(3)
 
 func _on_LuktTimer_timeout():

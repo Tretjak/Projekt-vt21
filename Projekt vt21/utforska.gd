@@ -30,8 +30,10 @@ func _on_utforska_body_exited(body):
 
 
 func _on_trigger_body_entered(area):
-	if area.get_class() == "KinematicBody2D" and saga == 0:
-		get_tree().change_scene("res://lore.tscn")
+	
+	var story = load("res://lore.tscn").instance()
+	story.position = get_node("../Player/KinematicBody2D/Camera2D").global_position
+	get_parent().add_child(story)
 		
-		saga = 1
+	saga = 1
 		

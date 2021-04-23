@@ -4,19 +4,24 @@
 [ext_resource path="res://lore.gd" type="Script" id=2]
 
 [node name="Node2D" type="Node2D"]
+light_mask = 0
+z_index = 99
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 516.188, 304 )
 scale = Vector2( 0.803335, 0.844444 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="TextEdit" type="TextEdit" parent="."]
-margin_left = 2.05377
-margin_top = 492.034
-margin_right = 1032.05
-margin_bottom = 603.034
+margin_left = -514.135
+margin_top = 192.221
+margin_right = 515.865
+margin_bottom = 303.221
 text = "I en galax långt långt borta så grävde dvärgarna för djupt och för girigt"
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
