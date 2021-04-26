@@ -1,6 +1,6 @@
 extends Area2D
 
-const speed = 6
+const speed = 1
 var target
 
 var velocity =Vector2()
@@ -12,3 +12,4 @@ func _ready():
 	
 func _process(delta):
 	position += velocity * speed
+	

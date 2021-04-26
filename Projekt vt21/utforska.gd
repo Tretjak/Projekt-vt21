@@ -16,7 +16,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
+#om krånglar byt namn till Player
 func _on_utforska_body_entered(area):
 	if area.get_class() == "KinematicBody2D":
 		knapp = true

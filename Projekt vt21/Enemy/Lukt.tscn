@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Enemy/Lukt.gd" type="Script" id=1]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
+
+[node name="Lukt" type="Sprite"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
