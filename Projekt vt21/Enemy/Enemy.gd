@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MOVE_SPEED = 25
+const MOVE_SPEED = 30
 
 onready var nav_2d: Navigation2D = get_node("../../Navigation2D")
 var lukt = 0
