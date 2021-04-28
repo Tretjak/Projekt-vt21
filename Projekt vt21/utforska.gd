@@ -1,7 +1,7 @@
 extends Node
 #connect(_on_utforska_body_entered, Node2D)
 var knapp = false
-var saga = 0
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -30,10 +30,10 @@ func _on_utforska_body_exited(body):
 
 
 func _on_trigger_body_entered(area):
+	Global.playerpos = get_node("../Player/KinematicBody2D/").position
+	#var story = load("res://lore.tscn").instance()
 	
-	var story = load("res://lore.tscn").instance()
-	story.position = get_node("../Player/KinematicBody2D/Camera2D").global_position
-	get_parent().add_child(story)
+	
 		
-	saga = 1
-		
+	Global.saga = 1
+	get_tree().change_scene("res://lore.tscn")

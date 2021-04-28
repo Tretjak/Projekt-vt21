@@ -48,11 +48,12 @@ func flashlight():
 
 func pistolsprite():
 	if Global.sprite == "på":
-		var pew = load("res://pew.tscn").instance()
-		add_child(pew)
-		target = get_global_mouse_position()
-		pew.position = $pistol.position
-		Global.sprite = ""
+		if !get_node("pew"):
+			var pew = load("res://pew.tscn").instance()
+			add_child(pew)
+			target = get_global_mouse_position()
+			pew.position = $pistol.position
+			#Global.sprite = ""
 
 func shoot():
 	if Global.weapon == "Handgun" and timer == 0:
