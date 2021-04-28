@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-const MOVE_SPEED = 30
+const MOVE_SPEED = 100
 
 onready var nav_2d: Navigation2D = get_node("../../Navigation2D")
 var lukt = 0
-export (int) var speed = 50
+export (int) var idle_speed = 50
 var goal = Vector2()
 var motion = Vector2()
 var path = []
@@ -18,11 +18,13 @@ func _physics_process(delta):
 	if hunt == 1:
 		#_set_target(goal)
 		goal = get_node("../../Player/KinematicBody2D").global_position - global_position
-		move_and_slide(goal * MOVE_SPEED * delta)
+		goal = goal.normalized() * MOVE_SPEED
+		move_and_slide(goal)
 	elif hunt == 2:
-		if get_node("../../StaticBody2D"):
-			goal = get_node("../../StaticBody2D").global_position - global_position
-			move_and_slide(goal * MOVE_SPEED * delta)
+		if target_list:
+			goal = target_list[0].global_position - global_position
+			goal = goal.normalized() * MOVE_SPEED
+			move_and_slide(goal)
 		else:
 			hunt = 0
 	elif hunt == 0:
@@ -37,7 +39,7 @@ func _physics_process(delta):
 			velocity.y += 1
 		if state == 4:
 			velocity.y -= 1
-		velocity = velocity.normalized() * speed
+		velocity = velocity.normalized() * idle_speed
 		move_and_slide(velocity)
 
 func _on_Timer_timeout():

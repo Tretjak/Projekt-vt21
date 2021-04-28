@@ -79,7 +79,7 @@ func _on_Timer_timeout():
 	timer = 0
 
 func _ready() -> void:
-	$Timer.start(0.5)
+	$Timer.start(1)
 
 func _on_LuktTimer_timeout():
 	var lukt = load("res://Enemy/Lukt.tscn").instance()
