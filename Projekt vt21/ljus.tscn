@@ -5,7 +5,7 @@
 [node name="Ljus" type="Node2D"]
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 219.203, 0 )
 z_index = 1
 texture = ExtResource( 1 )
+offset = Vector2( 230, 0 )
 shadow_enabled = true
