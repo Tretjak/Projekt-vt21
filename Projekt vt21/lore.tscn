@@ -9,7 +9,7 @@
 resource_name = "text"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimationPlayer/Label:percent_visible")
+tracks/0/path = NodePath("Label:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 1.0, 1.0 ]
+"values": [ 0.0, 1.0 ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -35,30 +35,21 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Label" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 492.0
+margin_right = 1030.0
+margin_bottom = 607.0
+custom_fonts/font = ExtResource( 3 )
+text = "i en galax.
+
+"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "text"
 anims/text = SubResource( 1 )
 script = ExtResource( 4 )
-
-[node name="Label" type="Label" parent="AnimationPlayer"]
-margin_left = 1.73059
-margin_top = 495.172
-margin_right = 1029.73
-margin_bottom = 600.172
-custom_fonts/font = ExtResource( 3 )
-text = "text fungerar tror jag"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextEdit" type="TextEdit" parent="AnimationPlayer"]
-anchor_right = 0.02
-anchor_bottom = 0.033
-margin_left = 1930.99
-margin_top = 1442.7
-margin_right = 2932.51
-margin_bottom = 1529.9
-custom_fonts/font = ExtResource( 3 )
-text = "i en galax långt långt borta"
-__meta__ = {
-"_edit_use_anchors_": false
-}
