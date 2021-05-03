@@ -77,3 +77,8 @@ func _on_Area2D_body_exited(body):
 		target_list.erase(body)
 		print(target_list)
 	pass # Replace with function body.
+
+func _on_lukt_area_body_entered(body):
+	if body.name != "KinematicBody2D":
+		body.queue_free()
+	pass # Replace with function body.
