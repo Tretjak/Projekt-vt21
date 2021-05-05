@@ -65,3 +65,9 @@ func _on_Area2D_body_exited(body):
 	elif body.name == "StaticBody2D" and body != self:
 		hunt = 0
 	pass # Replace with function body.
+
+func attack():
+	get_node("../Node/AnimationPlayer").play()
+
+func idle():
+	get_node("../Node/AnimationPlayer").stop()
