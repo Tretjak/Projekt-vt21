@@ -68,8 +68,8 @@ func shoot():
 		$Skott_Timer.start(0.1)
 	if weapon == "Elektrisk" and timer == 0:
 		var shot = load("res://Elskott.tscn").instance()
-		var spawn = get_node("pew/Position2D")
-		shot.position = spawn.global_position
+		#var spawn = get_node("pew/Position2D")
+		shot.position = get_global_position()
 		get_parent().get_parent().add_child(shot)
 		timer = 1
 		$Skott_Timer.start(1)
