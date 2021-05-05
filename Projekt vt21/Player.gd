@@ -22,7 +22,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
-	move_and_slide(velocity)
+	move_and_slide(velocity)*2
 	if Input.is_action_just_pressed("ui_accept"):
 		shoot()
 		

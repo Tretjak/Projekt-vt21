@@ -13,4 +13,7 @@ func _ready():
 	
 func _process(delta):
 	position += transform.x * speed * delta
-	
+	var shot = load("res://Blixtstrålar.tscn").instance()
+	#var spawn = get_node("pew/Position2D")
+	#shot.position = get_global_position()
+	add_child(shot)
