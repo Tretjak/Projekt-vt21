@@ -69,6 +69,7 @@ shape = SubResource( 7 )
 
 [node name="Room-overlay" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1304.58, 2059.98 )
+z_index = -7
 texture = ExtResource( 1 )
 
 [node name="utforska" type="Area2D" parent="."]
