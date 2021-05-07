@@ -36,4 +36,5 @@ func _on_trigger_body_entered(area):
 	
 		
 	Global.saga = 1
-	get_tree().change_scene("res://lore.tscn")
+# warning-ignore:return_value_discarded
+	assert(get_tree().change_scene("res://lore.tscn") == OK)
