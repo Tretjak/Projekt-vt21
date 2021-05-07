@@ -12,7 +12,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# warning-ignore:unused_argument
 func _process(delta):
 	if Input.is_action_just_pressed("ui_e"):
-		get_tree().change_scene("res://main.tscn")
+# warning-ignore:return_value_discarded
+		assert(get_tree().change_scene("res://main.tscn") == OK)
 		
