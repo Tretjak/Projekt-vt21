@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://startgame.gd" type="Script" id=1]
+[ext_resource path="res://fortsätt.gd" type="Script" id=2]
+[ext_resource path="res://inställningar.gd" type="Script" id=3]
+[ext_resource path="res://avsluta.gd" type="Script" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="nytt_spel" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 157.0
+margin_right = 39.0
+margin_bottom = 177.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fortsätt" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 190.0
+margin_right = 36.0
+margin_bottom = 210.0
+script = ExtResource( 2 )
+
+[node name="inställningar" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 226.0
+margin_right = 36.0
+margin_bottom = 246.0
+script = ExtResource( 3 )
+
+[node name="avsluta" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 259.0
+margin_right = 36.0
+margin_bottom = 279.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
