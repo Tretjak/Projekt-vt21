@@ -27,3 +27,13 @@ func _on_utforska_body_entered(area):
 
 func _on_utforska_body_exited(body):
 	knapp = false
+
+
+func _on_trigger_body_entered(area):
+	Global.playerpos = get_node("../Player/KinematicBody2D/").position
+	#var story = load("res://lore.tscn").instance()
+	
+	
+		
+	Global.saga = 1
+	get_tree().change_scene("res://lore.tscn")

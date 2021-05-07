@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/rymd.jpeg" type="Texture" id=1]
+[ext_resource path="res://lore.gd" type="Script" id=2]
+[ext_resource path="res://Assets/space_age/spaceage.tres" type="DynamicFont" id=3]
+[ext_resource path="res://AnimationPlayer.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "text"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Node2D" type="Node2D"]
+light_mask = 0
+z_index = 99
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 515.865, 303.221 )
+scale = Vector2( 0.803335, 0.844444 )
+z_index = -9
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 492.0
+margin_right = 1030.0
+margin_bottom = 607.0
+custom_fonts/font = ExtResource( 3 )
+text = "i en galax.
+
+"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "text"
+anims/text = SubResource( 1 )
+script = ExtResource( 4 )
