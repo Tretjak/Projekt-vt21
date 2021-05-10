@@ -16,7 +16,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
+#om krånglar byt namn till Player
 func _on_utforska_body_entered(area):
 	if area.get_class() == "KinematicBody2D":
 		knapp = true
@@ -27,3 +27,14 @@ func _on_utforska_body_entered(area):
 
 func _on_utforska_body_exited(body):
 	knapp = false
+
+
+func _on_trigger_body_entered(area):
+	Global.playerpos = get_node("../Player/KinematicBody2D/").position
+	#var story = load("res://lore.tscn").instance()
+	
+	
+		
+	Global.saga = 1
+# warning-ignore:return_value_discarded
+	assert(get_tree().change_scene("res://lore.tscn") == OK)

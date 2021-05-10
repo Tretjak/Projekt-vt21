@@ -10,12 +10,12 @@ var riktning = 0
 func _ready():
 	randomize()
 	choose_direction()
-	spawn_blixt(riktning)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _process(delta):
+	spawn_blixt(riktning)
 #	pass
 func choose_direction():
 	riktning = randi()%4
@@ -27,5 +27,20 @@ func spawn_blixt(dir):
 	if dir == 0:
 		xspawn = position.x+1
 		yspawn = randi()%5 - 2
-	position.x += xspawn
-	position.y += yspawn
+		position.x = xspawn
+		position.y += yspawn
+	if dir == 1:
+		xspawn = position.x+2
+		yspawn = randi()%5 - 2
+		position.x = xspawn
+		position.y += yspawn
+	if dir == 2:
+		xspawn = position.x+3
+		yspawn = randi()%5 - 2
+		position.x = xspawn
+		position.y -= yspawn
+	if dir == 3:
+		xspawn = position.x+4
+		yspawn = randi()%5 - 2
+		position.x = xspawn
+		position.y = yspawn

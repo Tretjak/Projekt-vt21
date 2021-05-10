@@ -1,0 +1,4 @@
+Trigger cryo room
+The room you are currently standing outside is a so-called cryo room.
+This room is used to freeze the ship's crew on long voyages.
+You check in and notice that everyone except you has died on something strange left.  

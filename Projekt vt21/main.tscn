@@ -1,44 +1,161 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://rumkollision.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Button.gd" type="Script" id=3]
 [ext_resource path="res://Door.gd" type="Script" id=4]
 [ext_resource path="res://Assets/dörr2.png" type="Texture" id=5]
+[ext_resource path="res://Pistol.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/1Space Station Ambience.wav" type="AudioStream" id=7]
+[ext_resource path="res://ficklampa.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ljud&musik.gd" type="Script" id=9]
+[ext_resource path="res://Assets/2Space Station Ambience.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Grafik/light.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Gun_fire.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Grafik/spot.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46.7686, 195.34 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 86.3663, 198.169 )
+[sub_resource type="OccluderPolygon2D" id=2]
+cull_mode = 1
+polygon = PoolVector2Array( 1.5, 767.5, 165.5, 767.5, 161.547, 1.97998, 1745.55, 13.98, 1749.5, 771.5, 1913.5, 767.5, 1913.62, 524.754, 2711.68, 524.754, 2711.68, 1322.82, 1913.62, 1320.3, 1909.55, 1217.98, 1805.55, 1217.98, 1801.55, 1793.98, 1217.55, 1793.98, 1225.55, 1913.98, 673.547, 1917.98, 677.547, 1805.98, 85.547, 1805.98, 89.547, 1213.98, 9.547, 1213.98 )
 
 [node name="main" type="Node"]
 
-[node name="Node2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 832.236, 990.186 )
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.0980392, 0.0941176, 0.0941176, 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="Node" parent="." instance=ExtResource( 2 )]
+[node name="Collisions" parent="." instance=ExtResource( 2 )]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="DoorWMR" type="StaticBody2D" parent="."]
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Coll-DoorWMR" type="CollisionShape2D" parent="DoorWMR"]
 position = Vector2( 0, 958.093 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D/CollisionShape2D"]
+[node name="Spr-DoorWMR" type="Sprite" parent="DoorWMR/Coll-DoorWMR"]
 position = Vector2( 0, 3.05176e-05 )
 scale = Vector2( 0.186221, 0.787868 )
 texture = ExtResource( 5 )
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+[node name="Obj-Handgun" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2121.32, 605.284 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
-position = Vector2( 77.0399, 958.093 )
-shape = SubResource( 2 )
-[connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="StaticBody2D/Area2D" to="StaticBody2D" method="_on_Area2D_body_exited"]
+[node name="ljus (ficklampa)" type="Node2D" parent="."]
+
+[node name="Obj-Flash" parent="ljus (ficklampa)" instance=ExtResource( 8 )]
+position = Vector2( 2121.32, 1236 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ljus (ficklampa)"]
+occluder = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 999.05, 442.12 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D4" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 1830.67, 1147.18 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D4"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D5" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 1122.67, 1659.18 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D5"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D6" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 222.67, 1099.18 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D6"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D3" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 352.05, 442.12 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D3"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="Light2D2" type="Light2D" parent="ljus (ficklampa)"]
+position = Vector2( 1551.55, 442.12 )
+texture = ExtResource( 11 )
+color = Color( 0.603922, 0.00784314, 0.00784314, 1 )
+shadow_enabled = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ljus (ficklampa)/Light2D2"]
+visible = false
+scale = Vector2( 0.632813, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="ljud&musik" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="Amb-Space1" type="AudioStreamPlayer" parent="ljud&musik"]
+stream = ExtResource( 7 )
+autoplay = true
+bus = "musik"
+
+[node name="Amb-Space2" type="AudioStreamPlayer2D" parent="ljud&musik"]
+position = Vector2( 3614.73, 958.093 )
+stream = ExtResource( 10 )
+autoplay = true
+bus = "ambians2"
+
+[node name="Pistolskott" type="AudioStreamPlayer" parent="ljud&musik"]
+stream = ExtResource( 12 )
+bus = "pistolskott"
+[connection signal="finished" from="ljud&musik/Amb-Space1" to="ljud&musik" method="_on_AudioStreamPlayer_finished"]
