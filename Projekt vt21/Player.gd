@@ -8,6 +8,7 @@ var target
 var lukt = 0
 
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
@@ -19,6 +20,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
+# warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 	if Input.is_action_just_pressed("ui_accept"):
 		shoot() 
