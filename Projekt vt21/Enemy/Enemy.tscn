@@ -1,13 +1,148 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Assets/icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Grafik/bug_pincer_major.png" type="Texture" id=1]
 [ext_resource path="res://Enemy/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Grafik/bug_body.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Grafik/bug_leg_3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Grafik/bug_leg_1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Grafik/bug_leg_2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Grafik/bug_pincer_minor.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 266.939
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 29.2332, 30.7064 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "pincers"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("majorpincer:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -10.0, -20.0, -10.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hmajorpincer:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 180.0, 190.0, 200.0, 190.0, 180.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "rymdkryp"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("bugleg1:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0, -3.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bugleg2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -5.0, 0.0, 7.0, -5.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bugleg3:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -5.0, 7.0, 0.0, -5.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("hbugleg1:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 180.0, 190.0, 177.0, 180.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("hbugleg2:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 175.0, 180.0, 187.0, 175.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("hbugleg3:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 175.0, 187.0, 180.0, 175.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("minorpincer:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -4.0, -10.0, 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("hminorpincer:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 180.0, 186.0, 190.0, 180.0 ]
+}
 
 [node name="Enemy" type="Node2D"]
 modulate = Color( 1, 0, 0, 1 )
@@ -17,23 +152,88 @@ __meta__ = {
 }
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-collision_mask = 2147483650
+collision_mask = 2147483649
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="KinematicBody2D"]
+collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D"]
 shape = SubResource( 1 )
 
-[node name="icon" type="Sprite" parent="KinematicBody2D"]
-texture = ExtResource( 1 )
+[node name="lukt_area" type="Area2D" parent="KinematicBody2D"]
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/lukt_area"]
 modulate = Color( 0.0352941, 0.533333, 0.933333, 1 )
 shape = SubResource( 2 )
 
+[node name="icon" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 1 )
+
 [node name="Timer" type="Timer" parent="KinematicBody2D"]
 autostart = true
+
+[node name="bugbody" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="bugleg1" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="hbugleg1" type="Sprite" parent="."]
+position = Vector2( -28, 0 )
+rotation = 3.14159
+texture = ExtResource( 5 )
+flip_v = true
+
+[node name="bugleg2" type="Sprite" parent="."]
+rotation = -0.0872665
+texture = ExtResource( 6 )
+
+[node name="hbugleg2" type="Sprite" parent="."]
+position = Vector2( -28, 0 )
+rotation = 3.05433
+texture = ExtResource( 6 )
+flip_v = true
+
+[node name="bugleg3" type="Sprite" parent="."]
+rotation = -0.0872665
+texture = ExtResource( 4 )
+
+[node name="hbugleg3" type="Sprite" parent="."]
+position = Vector2( -28, 0 )
+rotation = 3.05433
+texture = ExtResource( 4 )
+flip_v = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="majorpincer" type="Sprite" parent="Node"]
+position = Vector2( 0, -32 )
+texture = ExtResource( 1 )
+
+[node name="hmajorpincer" type="Sprite" parent="Node"]
+position = Vector2( -28, -32 )
+rotation = 3.14159
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node"]
+anims/pincers = SubResource( 4 )
+
+[node name="minorpincer" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+
+[node name="hminorpincer" type="Sprite" parent="."]
+position = Vector2( -28, 0 )
+rotation = 3.14159
+texture = ExtResource( 7 )
+flip_v = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/rymdkryp = SubResource( 3 )
 [connection signal="body_entered" from="KinematicBody2D/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="KinematicBody2D/Area2D" to="KinematicBody2D" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="KinematicBody2D/lukt_area" to="KinematicBody2D" method="_on_lukt_area_body_entered"]
 [connection signal="timeout" from="KinematicBody2D/Timer" to="KinematicBody2D" method="_on_Timer_timeout"]

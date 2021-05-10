@@ -5,7 +5,7 @@ export (int) var speed = 200
 var velocity = Vector2()
 var timer = 0
 var target
-
+var lukt = 0
 
 
 func _physics_process(delta):
@@ -24,9 +24,10 @@ func _physics_process(delta):
 		shoot() 
 	if velocity != Vector2(0,0) and ! $Fotsteg.is_playing():
 		$Fotsteg.play()
+		get_node("Charachter/AnimationPlayer").play("Ny Anim")
 	elif velocity == Vector2(0,0):
 		$Fotsteg.stop()
-		
+		get_node("Charachter/AnimationPlayer").stop()
 	
 	if !has_node("Ljus"):
 		if Input.is_action_just_pressed("ui_f"):

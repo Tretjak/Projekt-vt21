@@ -1,5 +1,4 @@
-extends Sprite
-
+extends StaticBody2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -8,7 +7,7 @@ extends Sprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.start(3)
+	$Timer.start(4)
 	pass # Replace with function body.
 
 
