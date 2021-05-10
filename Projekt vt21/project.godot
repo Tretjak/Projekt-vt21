@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Movement"
-run/main_scene="res://IntroVideo.tscn"
+run/main_scene="res://startskärm.tscn"
 config/icon="res://icon.png"
 
 [autoload]
