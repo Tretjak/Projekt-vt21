@@ -9,10 +9,15 @@ var goal = Vector2()
 var motion = Vector2()
 var path = []
 var state = 0
+#0 = stop, 1 = right, 2 = left, 3 = up, 4 = down
 var hunt = 0
 var velocity = Vector2()
 var target_list = []
-#0 = stop, 1 = right, 2 = left, 3 = up, 4 = down
+
+export (float) var max_health = 100
+
+onready var health = max_health
+
 
 func _physics_process(delta):
 	if hunt == 1:
@@ -81,4 +86,12 @@ func _on_Area2D_body_exited(body):
 func _on_lukt_area_body_entered(body):
 	if body.name != "KinematicBody2D":
 		body.queue_free()
+	pass # Replace with function body.
+
+func _on_Health_area_area_entered(area):
+	if area.get_collison_layer() == 3:
+		print(health)
+		health -= 20
+		if health >= 0:
+			queue_free()
 	pass # Replace with function body.
