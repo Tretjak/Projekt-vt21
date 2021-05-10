@@ -11,6 +11,6 @@ func _process(delta):
 	pass
 
 func _on_VideoPlayer_finished():
-	assert(get_tree().change_scene("res://main.tscn") == OK)
+	assert(get_tree().change_scene("res://startskärm.tscn") == OK)
 	print("test")
 	pass 
