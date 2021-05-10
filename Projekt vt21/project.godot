@@ -23,6 +23,11 @@ config/icon="res://icon.png"
 
 Global="*res://global.gd"
 
+[display]
+
+window/size/width=1366
+window/size/height=768
+
 [input]
 
 ui_accept={
