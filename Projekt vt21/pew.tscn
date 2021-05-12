@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Grafik/longgun.png" type="Texture" id=1]
+[ext_resource path="res://Assets/gun 192.png" type="Texture" id=1]
 [ext_resource path="res://pew.gd" type="Script" id=2]
 
 [node name="pew" type="Sprite"]
@@ -9,6 +9,6 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 3.8147e-05, 40 )
+position = Vector2( 0, 25 )
 rotation = 4.71239
 z_index = 9
