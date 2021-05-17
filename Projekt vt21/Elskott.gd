@@ -20,6 +20,5 @@ func _process(delta):
 
 
 func _on_Elskott_body_entered(body):
-	if body.name != "KinematicBody2D":
-		queue_free()
+	queue_free()
 	pass # Replace with function body.
