@@ -42,7 +42,7 @@ resource_name = "rymdkryp"
 length = 1.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("KinematicBody2D/bugleg1:rotation_degrees")
+tracks/0/path = NodePath("bugleg1:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "values": [ 0.0, 10.0, -3.0, 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("KinematicBody2D/bugleg2:rotation_degrees")
+tracks/1/path = NodePath("bugleg2:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -66,7 +66,7 @@ tracks/1/keys = {
 "values": [ -5.0, 0.0, 7.0, -5.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("KinematicBody2D/bugleg3:rotation_degrees")
+tracks/2/path = NodePath("bugleg3:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -78,7 +78,7 @@ tracks/2/keys = {
 "values": [ -5.0, 7.0, 0.0, -5.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("KinematicBody2D/hbugleg1:rotation_degrees")
+tracks/3/path = NodePath("hbugleg1:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -90,7 +90,7 @@ tracks/3/keys = {
 "values": [ 180.0, 190.0, 177.0, 180.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("KinematicBody2D/hbugleg2:rotation_degrees")
+tracks/4/path = NodePath("hbugleg2:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -102,7 +102,7 @@ tracks/4/keys = {
 "values": [ 175.0, 180.0, 187.0, 175.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("KinematicBody2D/hbugleg3:rotation_degrees")
+tracks/5/path = NodePath("hbugleg3:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -114,7 +114,7 @@ tracks/5/keys = {
 "values": [ 175.0, 187.0, 180.0, 175.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("KinematicBody2D/minorpincer:rotation_degrees")
+tracks/6/path = NodePath("minorpincer:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -126,7 +126,7 @@ tracks/6/keys = {
 "values": [ 0.0, -4.0, -10.0, 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("KinematicBody2D/hminorpincer:rotation_degrees")
+tracks/7/path = NodePath("hminorpincer:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -187,21 +187,23 @@ rotation = 3.05433
 texture = ExtResource( 4 )
 flip_v = true
 
-[node name="Node" type="Node" parent="KinematicBody2D"]
-
-[node name="majorpincer" type="Sprite" parent="KinematicBody2D/Node"]
-position = Vector2( 0, -32 )
-rotation = -0.327297
+[node name="majorpincer" type="Sprite" parent="KinematicBody2D"]
+rotation = -0.331957
+z_index = 3
 texture = ExtResource( 1 )
 
-[node name="hmajorpincer" type="Sprite" parent="KinematicBody2D/Node"]
-position = Vector2( -28, -32 )
-rotation = 3.46889
+[node name="hmajorpincer" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( -28, 0 )
+rotation = 3.47355
+z_index = 3
 texture = ExtResource( 1 )
 flip_v = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D/Node"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="KinematicBody2D"]
+autoplay = "pincers"
 anims/pincers = SubResource( 1 )
+
+[node name="Node" type="Node" parent="KinematicBody2D"]
 
 [node name="minorpincer" type="Sprite" parent="KinematicBody2D"]
 texture = ExtResource( 7 )
@@ -213,6 +215,7 @@ texture = ExtResource( 7 )
 flip_v = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+autoplay = "rymdkryp"
 anims/rymdkryp = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="KinematicBody2D"]

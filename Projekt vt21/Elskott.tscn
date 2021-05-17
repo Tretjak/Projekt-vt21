@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Elskott.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Grafik/Shot_PlaceHolder.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Grafik/electro_shot-2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.12706, 3.12736 )

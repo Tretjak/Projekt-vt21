@@ -81,8 +81,12 @@ func _on_Area2D_body_exited(body):
 func _on_lukt_area_body_entered(body):
 	pass # Replace with function body.
 
+func _ready():
+	#attack()
+	pass
+
 func attack():
-	get_node("../Node/AnimationPlayer").play()
+	get_node("AnimationPlayer2").play()
 
 func idle():
 	get_node("../Node/AnimationPlayer").stop()
