@@ -7,8 +7,8 @@
 script = ExtResource( 2 )
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 1366.0
+margin_bottom = 768.0
 stream = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
