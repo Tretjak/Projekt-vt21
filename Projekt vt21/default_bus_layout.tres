@@ -29,5 +29,5 @@ bus/5/name = "intro"
 bus/5/solo = false
 bus/5/mute = false
 bus/5/bypass_fx = false
-bus/5/volume_db = -2.71024
+bus/5/volume_db = -12.9785
 bus/5/send = "Master"
