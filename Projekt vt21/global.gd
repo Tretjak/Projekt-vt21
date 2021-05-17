@@ -2,7 +2,7 @@ extends Node
 
 
 var playerpos = Vector2(832,990)
-var weapon = ""
+var weapon = "Elektrisk"
 var ficklampa =""
 var sprite = ""
 var saga = 0
