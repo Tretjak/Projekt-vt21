@@ -74,9 +74,10 @@ func shoot():
 		timer = 1
 		$Skott_Timer.start(0.1)
 	if Global.weapon == "Elektrisk" and timer == 0:
-		var shot = load("res://Elektrisk.tscn").instance()
-		shot.position = position
-		get_parent().add_child(shot)
+		var shot = load("res://Elskott.tscn").instance()
+		#var spawn = get_node("pew/Position2D")
+		shot.position = get_global_position()
+		get_parent().get_parent().add_child(shot)
 		timer = 1
 		$Skott_Timer.start(1)
 #Elektrisk skot med aoe, snabbare powerup
@@ -85,7 +86,7 @@ func shoot():
 func _ready() -> void:
 	position = Global.playerpos
 	
-	$Timer.start(3)
+	$Timer.start(1)
 
 func _on_LuktTimer_timeout():
 	var lukt = load("res://Enemy/Lukt.tscn").instance()
