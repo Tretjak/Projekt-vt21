@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://rumkollision.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Grafik/light.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Gun_fire.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/Grafik/spot.png" type="Texture" id=13]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46.7686, 195.34 )
@@ -24,6 +25,7 @@ polygon = PoolVector2Array( 1.5, 767.5, 165.5, 767.5, 161.547, 1.97998, 1745.55,
 [node name="main" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.0980392, 0.0941176, 0.0941176, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -158,4 +160,7 @@ bus = "ambians2"
 [node name="Pistolskott" type="AudioStreamPlayer" parent="ljud&musik"]
 stream = ExtResource( 12 )
 bus = "pistolskott"
+
+[node name="Enemy" parent="." instance=ExtResource( 14 )]
+position = Vector2( -489.318, 1413.33 )
 [connection signal="finished" from="ljud&musik/Amb-Space1" to="ljud&musik" method="_on_AudioStreamPlayer_finished"]
