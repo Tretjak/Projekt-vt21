@@ -17,3 +17,9 @@ func _process(delta):
 	#var spawn = get_node("pew/Position2D")
 	#shot.position = get_global_position()
 	add_child(shot)
+
+
+func _on_Elskott_body_entered(body):
+	if body.name != "KinematicBody2D":
+		queue_free()
+	pass # Replace with function body.

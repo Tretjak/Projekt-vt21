@@ -4,18 +4,17 @@
 [ext_resource path="res://Assets/Grafik/electro_shot-2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.12706, 3.12736 )
+extents = Vector2( 23.9369, 24.1539 )
 
 [node name="Elskott" type="Area2D"]
 position = Vector2( 23, 31 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.19579, 5.41956 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = -1.5708
 texture = ExtResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Elskott_body_entered"]
