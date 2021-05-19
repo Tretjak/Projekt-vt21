@@ -43,5 +43,6 @@ func _on_trigger_body_entered(area):
 
 func _on_corridor_body_entered(area):
 	Global.playerpos = get_node("../Player/KinematicBody2D/").position
-	Global.saga = 1
+	Global.corridor = 1
 	assert(get_tree().change_scene("res://corrridor.tscn") == OK)
+	#pass
