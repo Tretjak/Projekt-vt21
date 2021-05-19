@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/rymd.jpeg" type="Texture" id=1]
 [ext_resource path="res://lore.gd" type="Script" id=2]
 [ext_resource path="res://Assets/space_age/spaceage.tres" type="DynamicFont" id=3]
 [ext_resource path="res://lorePlayer.gd" type="Script" id=4]
+[ext_resource path="res://Assets/freepik/keyboard-key-enter.png" type="Texture" id=5]
+[ext_resource path="res://Assets/freepik/keyboard-key-e.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "text"
@@ -56,3 +58,25 @@ __meta__ = {
 autoplay = "text"
 anims/text = SubResource( 1 )
 script = ExtResource( 4 )
+
+[node name="enter" type="Sprite" parent="."]
+position = Vector2( 1330.78, 595.384 )
+scale = Vector2( 0.110592, 0.12164 )
+texture = ExtResource( 5 )
+
+[node name="e" type="Sprite" parent="."]
+position = Vector2( 723.37, 193.747 )
+scale = Vector2( 0.113354, 0.110592 )
+texture = ExtResource( 6 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 710.0
+margin_top = 222.0
+margin_right = 806.0
+margin_bottom = 257.0
+text = "Skip
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
