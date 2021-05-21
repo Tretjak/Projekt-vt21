@@ -1,16 +1,16 @@
-extends Node
+extends Area2D
 
 
-var playerpos = Vector2(832,990)
-var weapon = "Elektrisk"
-var ficklampa =""
-var sprite = ""
-var saga = 0
-var corridor = 0
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	if Global.corridor == 1:
+		Global.corridor = 0
+		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
