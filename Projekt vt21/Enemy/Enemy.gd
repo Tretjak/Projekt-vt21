@@ -3,6 +3,7 @@ extends KinematicBody2D
 const MOVE_SPEED = 100
 
 onready var nav_2d: Navigation2D = get_node("../../Navigation2D")
+var health = 10
 var lukt = 0
 export (int) var idle_speed = 50
 var goal = Vector2()
@@ -15,6 +16,8 @@ var target_list = []
 #0 = stop, 1 = right, 2 = left, 3 = up, 4 = down
 
 func _physics_process(delta):
+	if health <= 0:
+		queue_free()
 	if hunt == 1:
 		#_set_target(goal)
 		goal = get_node("../../Player/KinematicBody2D").global_position - global_position
@@ -82,6 +85,7 @@ func _on_lukt_area_body_entered(body):
 	pass # Replace with function body.
 
 func _ready():
+	health = 10
 	#attack()
 	pass
 

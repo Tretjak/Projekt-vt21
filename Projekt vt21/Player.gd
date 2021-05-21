@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 export (int) var speed = 200
+var health = 10
 var velocity = Vector2()
 var timer = 0
 var target

@@ -17,5 +17,8 @@ func _process(delta):
 
 
 func _on_Handgun_body_entered(body):
+	if not body.get("health") == null:
+		body.health -= 2
+		print(body.health)
 	queue_free()
 	pass # Replace with function body.

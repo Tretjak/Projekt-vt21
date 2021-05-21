@@ -149,7 +149,7 @@ extents = Vector2( 32.2872, 31.6839 )
 
 [node name="Enemy" type="Node2D"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 0, -32 )
+position = Vector2( 547.372, 364.337 )
 __meta__ = {
 "_edit_group_": true
 }
