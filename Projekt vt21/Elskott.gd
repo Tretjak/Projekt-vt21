@@ -17,3 +17,6 @@ func _process(delta):
 	#var spawn = get_node("pew/Position2D")
 	#shot.position = get_global_position()
 	add_child(shot)
+
+
+
