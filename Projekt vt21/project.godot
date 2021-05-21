@@ -78,12 +78,6 @@ ui_f={
  ]
 }
 
-[layer_names]
-
-2d_render/layer_1="General"
-2d_render/layer_3="EnemyLayer"
-2d_render/layer_8="StoryLayer"
-
 [rendering]
 
 environment/default_environment="res://default_env.tres"
