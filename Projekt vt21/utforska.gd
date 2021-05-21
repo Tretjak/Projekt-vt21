@@ -38,3 +38,11 @@ func _on_trigger_body_entered(area):
 	Global.saga = 1
 # warning-ignore:return_value_discarded
 	assert(get_tree().change_scene("res://lore.tscn") == OK)
+
+
+
+func _on_corridor_body_entered(area):
+	Global.playerpos = get_node("../Player/KinematicBody2D/").position
+	Global.corridor = 1
+	assert(get_tree().change_scene("res://corrridor.tscn") == OK)
+	#pass

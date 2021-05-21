@@ -25,8 +25,7 @@ polygon = PoolVector2Array( 1.5, 767.5, 165.5, 767.5, 161.547, 1.97998, 1745.55,
 [node name="main" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color( 0.0980392, 0.0941176, 0.0941176, 1 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 script = ExtResource( 3 )

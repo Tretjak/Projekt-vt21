@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/koncept_derft.jpg" type="Texture" id=1]
 [ext_resource path="res://utforska.gd" type="Script" id=2]
 [ext_resource path="res://trigger.gd" type="Script" id=3]
+[ext_resource path="res://corridor.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 382.753, 161.468 )
@@ -30,6 +31,9 @@ extents = Vector2( 264.552, 122.62 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 290.743, 32.5447 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 39.3027, 213.439 )
 
 [node name="Collisions" type="Node"]
 script = ExtResource( 2 )
@@ -93,6 +97,19 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
 shape = SubResource( 9 )
+
+[node name="corridor" type="Area2D" parent="."]
+position = Vector2( -39.598, 958.838 )
+collision_layer = 128
+collision_mask = 128
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corridor"]
+shape = SubResource( 10 )
 [connection signal="body_entered" from="utforska" to="." method="_on_utforska_body_entered"]
 [connection signal="body_exited" from="utforska" to="." method="_on_utforska_body_exited"]
 [connection signal="body_entered" from="trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_entered" from="corridor" to="." method="_on_corridor_body_entered"]
